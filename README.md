@@ -1,2 +1,43 @@
-# Desafio-DIO-Configura-o-de-Banco-de-Dados-SQL-no-Azure
-Desafio DIO: Configuração de Banco de Dados SQL no Azure
+# 🧠 Desafio DIO: Configuração de Banco de Dados SQL no Azure
+
+Este repositório faz parte do desafio proposto na plataforma DIO, cujo objetivo é configurar uma instância de Banco de Dados SQL no Microsoft Azure e documentar todo o processo de forma prática e clara.
+
+## 🎯 Objetivos do Desafio
+
+- Praticar a criação e configuração de um banco de dados SQL na nuvem (Azure)
+- Aplicar comandos SQL básicos em uma instância remota
+- Documentar o processo técnico utilizando o GitHub
+
+---
+
+## ☁️ Etapas Realizadas
+
+1. Criação de um recurso **SQL Database** no portal Azure
+2. Configuração de um **Servidor Lógico SQL**
+3. Liberação do IP local via **regras de firewall**
+4. Conexão ao banco utilizando o **Azure Data Studio**
+5. Execução de comandos SQL para:
+   - Criação de tabela
+   - Inserção de dados
+   - Consulta
+
+---
+
+## 📜 Comandos SQL utilizados
+
+Arquivo: [`script.sql`](./script.sql)
+
+```sql
+CREATE TABLE Alunos (
+    ID INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Curso VARCHAR(50),
+    DataCadastro DATETIME DEFAULT GETDATE()
+);
+
+INSERT INTO Alunos (ID, Nome, Curso)
+VALUES (1, 'Ana Paula', 'Ciência da Computação'),
+       (2, 'Carlos Eduardo', 'Engenharia de Dados');
+
+SELECT * FROM Alunos;
+
